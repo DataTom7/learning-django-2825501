@@ -1,1 +1,11 @@
-HOME
+{% extends "base.html"%} {% block content %}
+<div>
+  {% for driver in drivers %}
+  <div class="driver-name">
+    <a href="{% url 'driver_detail' driver.id %}">
+      <h3>{{ driver.first_name|capfirst}}</h3>
+    </a>
+  </div>
+  {% endfor%}
+</div>
+{% endblock %}
